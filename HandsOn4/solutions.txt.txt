@@ -1,0 +1,28 @@
+Problem 1:
+Time Complexity Proofs
+
+1. Merge Sort (merge_sort): The time complexity of merge sort is O(Nlog N), where N is the number of elements in the array being sorted. This is because the array is repeatedly divided into two halves (logarithmic number of divisions), and then a linear amount of work (merging) is done at each level of recursion.
+
+2. Merge Arrays (merge_arrays): Since the function merges all arrays into one and then sorts the resulting array, the time complexity depends on the total number of elements across all arrays. If there are K arrays each of size N, the total number of elements is KN. Sorting these elements using merge sort yields a time complexity of O(KNlog(KN)).
+
+3. Generate Sorted Arrays (generate_sorted_arrays): For each of the K arrays of size N, a merge sort is performed. The time complexity for sorting one array is O(Nlog N), thus sorting K arrays results in a complexity of O(KNlog N).
+
+Possible Improvements
+
+- Optimization of Array Merging: Instead of merging all arrays into one large array and then sorting, a more efficient approach could involve using a min-heap to manage the smallest elements from each array, yielding a direct merge in O(KN log K) time, which is more optimal for larger values of K and N. This reduces unnecessary comparisons and is particularly efficient when K is large.
+
+Problem 2:
+Time Complexity Proof for Remove Duplicates
+
+The `removeDuplicates` function in the provided code uses a two-pointer approach:
+
+1. Reading through the array: There is a single loop that reads through the array of size  N , comparing the current element with the previous one to determine if it's a duplicate.
+   
+   - If not a duplicate, the element is written to the new position indicated by the second pointer index, and index is incremented.
+   - This process requires examining each element exactly once and potentially writing each element once if it is not a duplicate.
+
+Given this structure, the time complexity of the function is O(N) because each of the  N  elements is considered exactly once, and operations within each loop iteration are constant time (simple comparisons and assignments).
+
+Possible Improvements
+
+- Adapting for large data sets: The function can be adapted to handle streams of data or very large arrays that do not fit into memory by processing segments of the data incrementally, which would be useful for data processing applications requiring the handling of massive datasets efficiently.
