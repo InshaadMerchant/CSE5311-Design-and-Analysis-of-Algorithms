@@ -50,22 +50,6 @@ void PrintArray(int MyArray[], int n)
     printf("\n");
 }
 
-void FillArray(int arr[], int size, int caseType) {
-    for (int i = 0; i < size; i++) {
-        switch (caseType) {
-            case 0: // Worst case (ascending sorted)
-                arr[i] = i;
-                break;
-            case 1: // Average case (random)
-                arr[i] = rand() % size;
-                break;
-            case 2: // Best case (for demonstration)
-                arr[i] = rand() % size; // Still using random for lack of a better automatic method
-                break;
-        }
-    }
-}
-
 int main(int argc , char *argv[]) 
 { 
     int MyArray[10] = {5,2,3,10,7,4,18,25,33,47};

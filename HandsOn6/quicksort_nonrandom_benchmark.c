@@ -40,17 +40,17 @@ void QuickSort(int MyArray[], int low, int high, int pivotType)
     }
 }
 
-void FillArray(int arr[], int size, int caseType) {
-    for (int i = 0; i < size; i++) {
-        switch (caseType) {
+void FillArray(int MyArray[], int n, int case) {
+    for (int i = 0; i < n; i++) {
+        switch (case) {
             case 0: // Worst case (ascending sorted)
-                arr[i] = i;
+                MyArray[i] = i;
                 break;
             case 1: // Average case (random)
-                arr[i] = rand() % size;
+                MyArray[i] = rand() % n;
                 break;
             case 2: // Best case (for demonstration)
-                arr[i] = rand() % size; // Still using random for lack of a better automatic method
+                MyArray[i] = rand() % n; // Still using random for lack of a better automatic method
                 break;
         }
     }
@@ -62,10 +62,10 @@ int main(int argc , char *argv[])
     // QUICK SORT NON-RANDOM VERSION
 
     int sizes[] = {10, 50, 100, 1000, 5000, 10000, 20000, 30000};
-    int num_sizes = sizeof(sizes) / sizeof(sizes[0]);
+    int num = sizeof(sizes) / sizeof(sizes[0]);
     srand(time(NULL));
 
-    for (int i = 0; i < num_sizes; i++) 
+    for (int i = 0; i < num; i++) 
     {
         int n = sizes[i];
         int *MyArray = malloc(n * sizeof(int));
